@@ -51,6 +51,10 @@
       {
         
       }
+	  function fire()
+      {
+        document.location="cgi-bin/fire.cgi";
+      }
       /*
 document.onkeydown = function (e) {
 
@@ -121,32 +125,36 @@ endleft();
           Polaris Command Centre
         </h1>
         <div class="row">
-          <div class="col-md-8" id="mjpeg">
-          </div>
-          <div style="col-md-8">
-            
-            <div class="row">
-              <div class="col-md-2 col-md-offset-2">
-                <img src="img/up.png" id="f" onmousedown="startup()" onmouseup="endup()">
-              </div>
+          <div class="col-md-8" id="mjpeg"></div>
+		  <div class="col-md-3">
+			<div class="row">
+            <div class="col-md-2 col-md-offset-1">
+               <img src="img/up.png" id="f" onmousedown="startup()" onmouseup="endup()">
             </div>
-            <div class="row">
-              <div class="col-md-2">
+        </div>
+        <div class="row">
+            <div class="col-md-1">
                 <img src="img/left.png" id="l" onmousedown="startleft()" onmouseup="endleft()">
-              </div>
-              <div class="col-md-2">
-                <img src="img/snap.png" id="r" onmousedown="snap()">
-              </div>
-              <div class="col-md-2">
+            </div>
+            <div class="col-md-1">
+              <img src="img/snap.png" id="r" onmousedown="snap()">
+            </div>
+              <div class="col-md-1">
                 <img src="img/right.png" id="r" onmousedown="startright()" onmouseup="endright()">
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2 col-md-offset-2">
+              <div class="col-md-2 col-md-offset-1">
                 <img src="img/down.png" id="s" onmousedown="startdown()" onmouseup="enddown()">
               </div>
             </div>
+			<div class="row">
+			   <div class="col-md-2 col-md-offset-1">
+					<img src="img/fire.png" id="s" onclick="fire()">
+			   </div>
+			</div>
           </div>
+		  </div>
         </div>
       </div>
     </div>
