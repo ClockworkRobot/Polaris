@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<title>Polaris Control System</title>
+<script language="Javascript">
+function startright()
+{
+    document.location="cgi-bin/sright.cgi";
+}
+function endright()
+{
+    document.location="cgi-bin/eright.cgi";
+}
+function startleft()
+{
+    document.location="cgi-bin/sleft.cgi";
+}
+function endleft()
+{
+    document.location="cgi-bin/eleft.cgi";
+}
+function startup()
+{
+    document.location="cgi-bin/sup.cgi";
+}
+function endup()
+{
+    document.location="cgi-bin/eup.cgi";
+}
+function startdown()
+{
+    document.location="cgi-bin/sdown.cgi";
+}
+function enddown()
+{
+    document.location="cgi-bin/edown.cgi";
+}
+/*
+document.onkeydown = function (e) { 
+  e = e || window.event; 
+  var charCode = e.charCode || e.keyCode;
+      if(charCode==38){
+	startup();
+      }else if(charCode==39){
+        startright();
+       }else if(charCode==40){
+        startdown();
+       }else if(charCode==37){
+        startleft();
+}
+};
+
+document.onkeyup = function (e) {
+  e = e || window.event;
+  var charCode = e.charCode || e.keyCode;
+      if(charCode==38){
+        endup();
+      }else if(charCode==39){
+        endright();
+       }else if(charCode==40){
+        enddown();
+       }else if(charCode==37){
+        endleft();
+}
+};
+*/
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/mjpegcanvasjs/current/mjpegcanvas.min.js"></script>
+<script type="text/javascript" type="text/javascript">
+   /**
+   * Setup all visualization elements when the page is loaded. 
+   */
+  function init() {
+     // Create the main viewer.
+     var viewer = new MJPEGCANVAS.Viewer({
+       divID : 'mjpeg',
+       host : window.location.host,
+       port : 8081,
+       width : 640,
+       height : 480,
+       topic : '/wide_stereo/left/image_color'
+     });
+   }
+ </script>
+</head>
+<body onload="init()">
+<div class="container-fluid">
+<div class="container">
+	<div class="row">
+	<div class="col-md-8" id="mjpeg"></div>
+    <div style="col-md-4">
+    <h1>Raspberry Pi GPIO</h1>
+
+    <img src="/forward.jpg" id="f" onmousedown="startup()" onmouseup="endup()">
+<br>
+    <img src="/left.jpg" id="l" onmousedown="startleft()" onmouseup="endleft()">
+    <img src="/right.jpg" id="r" onmousedown="startright()" onmouseup="endright()">
+<br>
+    <img src="/stop.jpg" id="s" onmousedown="startdown()" onmouseup="enddown()">
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
