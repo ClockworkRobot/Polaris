@@ -11,6 +11,7 @@ Hardware Setup
 Networking Setup
 ------------------
 There are two way's a RPi can get an IP address
+
 1. DCHP - This is where your network router will provide a dynamic IP address, This means you will have to have a monitor connected to the RPi to find the IP
 2. Static - This is where the RPi is setup to have one specific IP - This is the IP that you will use
 
