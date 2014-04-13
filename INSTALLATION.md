@@ -18,6 +18,7 @@ Software Setup
 -----------------
 
 Either through direct input or over ssh:
+
 1. Update all packages on your system `sudo apt-get update` and `sudo apt-get upgrade` This may take some time
 2. Install the required packages `sudo apt-get install motion apache2 php5`
 3. Install the [WiringPi GPIO Utility](http://wiringpi.com/download-and-install/) included with the WiringPi python libraries
